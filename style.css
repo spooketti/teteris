@@ -61,6 +61,7 @@ margin-bottom: 1%;
 
 .hoverbutton
 {
+  color:white;
   transition: 50ms transform,0s filter;
   width:50%;
   font-family: 'Kanit', sans-serif;
