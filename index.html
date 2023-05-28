@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tetris</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="a real bad website" />
+ <link rel="icon" href="pixel.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="darkModal" onclick=closeServerMenu()></div>
+  <nav id="MainNav">
+    <p>tetris made by an incompetent dev</p>
+  </nav>
+  <div id="background">
+    <img id="backgroundImage" src="assets/images/background.jpg"></img>
+    
+  </div>
+  <div id="buttonHolder">
+    <button class="hoverbutton soundSelect" id="createServerButton" onclick=createServer()>paypal.me/alexz2040</button>
+    <button class="hoverbutton soundSelect" id="joinServerButton" onclick=showServers()>Join Server</button>
+    <button class="hoverbutton soundSelect" id="queueButton">Queue (doesn't work don't try this for now it's the server)</button>
+  </div>
+  <div id="createServerMenu">
+    <h1 id="createAServerHeader">Create A Server</h1> 
+    <input id="createAServerNameInput" placeholder="The name of the server"></input>
+    <button id="createAServerConfirm" onclick=createServerBackend()>Submit</button>
+  </div>
+<div id="serverList">
+  <div id="serverListings">
+  </div>
+  
+</div>
+<div id="mine">
+  0
+</div>
+<div id="theirs">
+0
+</div>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="script.js"></script>
+  <script src="uisound.js"></script>
+
+</body>
+</html>

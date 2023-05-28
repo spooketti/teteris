@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+html,body{
+  width:100%;
+  height:100%;
+  background-color: black;
+  color:white;
+}
+
+#serverList
+{
+position: fixed;
+top:15%;
+left:20%;
+height:90%;
+width:60%;
+overflow-y:scroll;
+display: none;
+overflow-x: hidden;
+-ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.serverChoice
+{
+  position:relative;
+  right:-2em;
+  width:100%;
+z-index: 4;
+height:5em;
+background-color: #271e24;
+border-top: 3px solid #452f3d;
+    border-left: 3px solid #392933;
+    border-bottom: 3px solid #181416;
+    border-right: 3px solid #1e181c;
+margin-bottom: 1%;
+}
+
+
+.serverChoice:hover
+{
+  filter:brightness(1.5);
+  transform: translateX(-2em);
+  transition: 50ms transform,0s filter;
+}
+
+.serverName
+{
+  position: relative;
+  top:20%;
+  left:0%;
+  font-family: 'Kanit', sans-serif;
+  font-size: xx-large;
+}
+
+.hoverbutton:hover
+{
+  transform: translateX(-6em);
+  filter: brightness(1.5);
+}
+
+.hoverbutton
+{
+  transition: 50ms transform,0s filter;
+  width:50%;
+  font-family: 'Kanit', sans-serif;
+  background-color: #353d37;
+  border-top: 3px solid #44584b;
+      border-left: 3px solid #3e4d44;
+      border-bottom: 3px solid #2c2f2d;
+      border-right: 3px solid #2f3531;
+}
+
+#background
+{
+  position: fixed;
+  top:0%;
+  left:0%;
+  width:100%;
+  height:100%;
+}
+
+#createServerMenu
+{
+  display: none;
+  position: absolute;
+  top:15%;
+  left:25%;
+  z-index: 8;
+  border-radius: 2%;
+  height:70%;
+  width:50%;
+  background: linear-gradient(270deg, #162f2e, #376d6b);
+  background-size: 400% 400%;
+
+  -webkit-animation: createServerMenu 48s ease infinite;
+  -moz-animation: createServerMenu 48s ease infinite;
+  animation: createServerMenu 48s ease infinite;
+  color:white;
+  border-top: 3px solid #1c5558;
+      border-left: 3px solid #1b4347;
+      border-bottom: 3px solid #11191b;
+      border-right: 3px solid #132323;
+      font-family: 'Kanit', sans-serif;
+      text-align: center;
+}
+
+
+#createAServerNameInput
+{
+  width:75%;
+  font-family: 'Kanit', sans-serif;
+  color:white;
+  background-color: #121e24;
+  border-top: 3px solid #193042;
+      border-left: 3px solid #172835;
+      border-bottom: 3px solid #0e1115;
+      border-right: 3px solid #10161b;
+}
+
+#createAServerConfirm
+{
+  background-color: #121e24;
+  border-top: 3px solid #193042;
+      border-left: 3px solid #172835;
+      border-bottom: 3px solid #0e1115;
+      border-right: 3px solid #10161b;
+      color:white;
+      font-family: 'Kanit', sans-serif;
+}
+
+#createAServerConfirm:hover,#createAServerNameInput:focus,#createAServerNameInput:hover
+{
+filter:brightness(1.5);
+transition: 50ms transform,0s filter;
+}
+
+#createASeverHeader
+{
+  color:white;
+}
+
+#backgroundImage
+{
+  height:100%;
+  filter:brightness(100%)
+}
+
+#darkModal
+{
+  position:absolute;
+  top:0%;
+  left:0%;
+  height:100%;
+  width:100%;
+  z-index: 8;
+  background-color: black;
+  opacity: 50%;
+  display: none;
+}
+
+#MainNav
+{
+  top:0%;
+  left:0%;
+  height:10%;
+  width:100%;
+  position: fixed;
+  border-top: 3px solid #534458;
+  border-left: 3px solid #4a3e4d;
+  border-bottom: 3px solid #2e2c2f;
+  border-right: 3px solid #332f35;
+  background: linear-gradient(270deg, #2f162e, #6c376d);
+  background-size: 400% 400%;
+
+  -webkit-animation: createServerMenu 60s ease infinite;
+  -moz-animation: createServerMenu 60s ease infinite;
+  animation: createServerMenu 60s ease infinite;
+  z-index: 2;
+  font-family: 'Kanit', sans-serif;
+  font-size: 150%;
+}
+
+#MainNav p
+{
+  opacity: 100%;
+}
+
+
+
+#createServerButton
+{
+z-index: 2;
+position: absolute;
+top:15%;
+right:0%;
+height:20%;
+}
+
+#joinServerButton
+{
+z-index:2;
+position: absolute;
+top:35%;
+right:0%;
+width:50%;
+height:20%;
+}
+
+#queueButton
+{
+  z-index:2;
+position: absolute;
+top:55%;
+right:0%;
+width:50%;
+height:20%;
+}
+
+#buttonHolder
+{
+  position: absolute;
+  top:0%;
+  left:0%;
+  height: 100%;
+  width:100%;
+}
+
+/*Animations*/
+
+
+@-webkit-keyframes ServerListing {
+  0%{background-position:0% 86%}
+  50%{background-position:100% 15%}
+  100%{background-position:0% 86%}
+}
+@-moz-keyframes ServerListing {
+  0%{background-position:0% 86%}
+  50%{background-position:100% 15%}
+  100%{background-position:0% 86%}
+}
+@keyframes ServerListing {
+  0%{background-position:0% 86%}
+  50%{background-position:100% 15%}
+  100%{background-position:0% 86%}
+}
+
+
+@-webkit-keyframes createServerMenu {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes createServerMenu {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes createServerMenu {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/*webkit garbage*/
+
+/*scroll bar*/
+
+/* width */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(1, 24, 42);
+}
+
+/* */
