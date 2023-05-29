@@ -1,4 +1,5 @@
 let selectsound = new Audio('assets/sounds/Select.wav')
+let clickSound = new Audio('assets/sounds/Click.wav')
 let currentTarget = null;
 let newTarget = null;
 
@@ -16,11 +17,12 @@ document.addEventListener("mousemove", function(e)
         selectsound.play()
     }
 })
-/*
+
 document.addEventListener("click",function(e)
 {
-    selectsound.pause()
-    selectsound.currentTime = 0;
-    selectsound.play()
+    if(e.target.classList.contains("soundSelect"))
+    {
+        clickSound.currentTime = 0;
+        clickSound.play()
+    }
 })
-*/

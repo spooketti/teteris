@@ -107,7 +107,7 @@ margin-bottom: 1%;
 }
 
 
-#createAServerNameInput
+#createAServerNameInput,#signUpUserName
 {
   width:75%;
   font-family: 'Kanit', sans-serif;
@@ -118,6 +118,8 @@ margin-bottom: 1%;
       border-bottom: 3px solid #0e1115;
       border-right: 3px solid #10161b;
 }
+
+
 
 #createAServerConfirm
 {
@@ -227,7 +229,49 @@ height:20%;
   width:100%;
 }
 
+#signupMenu
+{
+  -webkit-box-shadow: 0px 0px 30px 30px #6c376d;
+-moz-box-shadow: 0px 0px 30px 30px #6c376d;
+box-shadow: 0px 0px 30px 30px #6c376d;
+  position: fixed;
+  width:70%;
+  height:60%;
+  top:20%;
+  left:15%;
+  color:white;  
+  background: linear-gradient(270deg, #2f162e, #6c376d);
+  background-size: 400% 400%;
+
+  -webkit-animation: createServerMenu 60s ease infinite;
+  -moz-animation: createServerMenu 60s ease infinite;
+  animation: createServerMenu 60s ease infinite;
+  border-top: 3px solid #534458;
+  border-left: 3px solid #4a3e4d;
+  border-bottom: 3px solid #2e2c2f;
+  border-right: 3px solid #332f35;
+  z-index: 10;
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+}
+
+#signUpHeader
+{
+  font-size: 200%;
+  top:0%;
+}
 /*Animations*/
+
+#dark
+{
+  position:fixed;
+  height:90%;
+  width:100%;
+  top:10%;
+  left:0%;
+  z-index: 10;
+  background-color: black;
+}
 
 
 @-webkit-keyframes ServerListing {

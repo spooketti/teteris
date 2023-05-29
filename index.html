@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="dark"></div>
   <div id="darkModal" onclick=closeServerMenu()></div>
   <nav id="MainNav">
     <p>tetris made by an incompetent dev</p>
@@ -26,6 +27,11 @@
     <h1 id="createAServerHeader">Create A Server</h1> 
     <input id="createAServerNameInput" placeholder="The name of the server"></input>
     <button id="createAServerConfirm" onclick=createServerBackend()>Submit</button>
+  </div>
+  <div id="signupMenu">
+    <div id="signUpHeader">You aren't logged in bozo log in NOW!!</div> 
+    <input id="signUpUserName" placeholder="Username"></input>
+    <button id="createAServerConfirm" onclick=signInWithGoogle()>Submit</button>
   </div>
 <div id="serverList">
   <div id="serverListings">

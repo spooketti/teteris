@@ -4,6 +4,8 @@ let serverListings = document.getElementById("serverListings")
 let serverList = document.getElementById("serverList")
 let darkModal = document.getElementById("darkModal")
 let createServerMenu = document.getElementById("createServerMenu")
+let signupMenu = document.getElementById("signupMenu")
+let crazy = "genius"
 //temporary: DON'T LEAVE THIS IN
 
 localStorage.userId = Math.random()
@@ -21,6 +23,61 @@ const firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
 let activeUser
+
+const provide = new firebase.auth.GoogleAuthProvider();
+function signInWithGoogle() 
+  {
+    firebase.auth()
+    .signInWithPopup(provide)
+    .then((result) => {
+     
+      console.log("success")
+      //console.log(firebase.auth().currentUser)
+    })
+    .catch((error) =>
+    {
+      console.log(error)
+    })
+  }
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    /*
+    activeUser = user
+    username = user.displayName
+    pfp = user.photoURL
+    //console.log(pfp)
+profileImage.src = pfp
+    profileName.innerText = username
+    var uid = user.uid;
+    let profIMG = document.querySelectorAll(".currentProfIMG")
+  let profSPAN = document.querySelectorAll(".currentProfSPAN")
+  for(let i=0;i<profIMG.length;i++)
+    {
+      profIMG[i].src = user.photoURL
+    }
+  for(let i=0;i<profSPAN.length;i++)
+    {
+      profSPAN[i].innerText = user.displayName
+    }
+    if(!localStorage.hasConfirmedUsername)
+{
+  localStorage.hasConfirmedUsername = true
+  document.getElementById("dynamicPopup").style.display = "block";
+  
+ // document.querySelectorAll(".currentProfIMG").src = user.photoURL
+ // document.querySelector(".currentProfSPAN").innerText = user.displayName
+  //localStorage.hasConfirmedUsername = "true"
+  */
+}
+ else {
+   console.log("cock")
+  }
+});
+
+
+const user = firebase.auth().currentUser;
+
 const db = firebase.database();
 const servers = db.ref("Servers/")
 let currentServer = null;
@@ -85,67 +142,6 @@ servers.on("child_removed", function(snapshot)
 
 
 
-
-
-//const fetchChat = db.ref("bruh/");
-
-// fetchChat.on("child_changed", function(snapshot) {
-//   const messages = snapshot.val();
-//   theirs.innerText = messages.cock
-
-
-   /*let today = new Date(messages.timestamp);
-const dd = String(today.getDate()).padStart(2, '0');
-const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-const yyyy = today.getFullYear();
-  
- let time =  today.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-  today = mm + '/' + dd + '/' + yyyy + " at " + time;
-  
-  let messageDiv = document.createElement("div") //#Chat div
-  chat.appendChild(messageDiv)
-  
-  let pfp = document.createElement("img")
-  pfp.src = messages.pfp
-  pfp.className = "chatProfilePic"
-  messageDiv.appendChild(pfp) //#Chat div img
-  
-  let messageContent = document.createElement("div") //Chat div div
-  messageDiv.appendChild(messageContent)
-  
-  let userNameHeader = document.createElement("p") //Chat div div p
-  userNameHeader.innerHTML = "<b>" +  messages.username + "</b>" + " " + today
-  messageContent.appendChild(userNameHeader)
-
- // messageContent.appendChild(document.createElement("br"))
-  let message = document.createElement("span") //Chat div div span
-
-
-  if(validateURL(messages.message))
-  {
-    message = document.createElement("a")
-    message.href = messages.message
-    message.className = "chatlink"
-    validateIMG(messages.message,message)
-  }
-  
-  
-  
-  message.innerText = messages.message 
-  messageContent.appendChild(message)
-
-  
-  chat.scrollTop = chat.scrollHeight;
-
-  if(!isWebsiteFocus && hasInteractedWithDOM){
-  notifSound.play()
-  console.log(isWebsiteFocus + "webfoc")
-  console.log(hasInteractedWithDOM + "domint")
-  }
-*/
-  
-  
-//});
 
 servers.on("child_added", function(snapshot)
 {
