@@ -95,7 +95,7 @@ function createServerBackend()
   let serverName = document.getElementById("createAServerNameInput").value
   closeServerMenu()
   serverId = Date.now()
-  let host = firebase.auth().currseUser.uid
+  let host = firebase.auth().currentUser.uid
   let id = serverId
   currentServer = serverId
   db.ref("Servers/" + serverId).set({
