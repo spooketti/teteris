@@ -38,9 +38,7 @@ firebase.auth().currentUser.updateProfile({displayName: document.getElementById(
     firebase.auth()
     .signInWithPopup(provide)
     .then((result) => {
-     
-      console.log("success")
-      //console.log(firebase.auth().currentUser)
+
     })
     .catch((error) =>
     {
@@ -52,7 +50,7 @@ firebase.auth().onAuthStateChanged((user) => {
   if (!user) {
 signupMenu.style.display = "block"
 dark.style.display = "block"
-}
+} //consider using return here to cut the else
 else
 {
   signupMenu.style.display = "block"
@@ -97,7 +95,7 @@ function createServerBackend()
   let serverName = document.getElementById("createAServerNameInput").value
   closeServerMenu()
   serverId = Date.now()
-  let host = localStorage.userId
+  let host = firebase.auth().currseUser.uid
   let id = serverId
   currentServer = serverId
   db.ref("Servers/" + serverId).set({
