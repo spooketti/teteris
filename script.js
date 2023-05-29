@@ -28,6 +28,12 @@ let activeUser
 const provide = new firebase.auth.GoogleAuthProvider();
 function signInWithGoogle() 
   {
+    if(firebase.auth().currentUser != null)
+    {
+      signupMenu.style.display = "none"
+dark.style.display = "none"
+      return;
+    }
     firebase.auth()
     .signInWithPopup(provide)
     .then((result) => {
@@ -42,14 +48,16 @@ function signInWithGoogle()
   }
 
 firebase.auth().onAuthStateChanged((user) => {
-  console.log("waste of time")
   if (!user) {
 signupMenu.style.display = "block"
 dark.style.display = "block"
 }
 else
 {
-  console.log("what")
+  signupMenu.style.display = "block"
+dark.style.display = "block"
+document.getElementById("signUpHeader").innerText = "sorry but this is required everytime you load up this website because of some nerds who make website audio hard"
+document.getElementById("signUpUserName").value = firebase.auth().currentUser.displayName
 }
 
 });
