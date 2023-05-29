@@ -32,7 +32,7 @@ function signInWithGoogle()
     {
       signupMenu.style.display = "none"
 dark.style.display = "none"
-firebase.auth().currentUser.displayName = document.getElementById("signUpUserName").value
+firebase.auth().currentUser.updateProfile({displayName: document.getElementById("signUpUserName").value})
       return;
     }
     firebase.auth()
