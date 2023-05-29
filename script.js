@@ -46,6 +46,10 @@ firebase.auth().onAuthStateChanged((user) => {
 signupMenu.style.display = "block"
 dark.style.display = "block"
 }
+else
+{
+  console.log("what")
+}
 
 });
 
