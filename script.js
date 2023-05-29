@@ -5,12 +5,13 @@ let serverList = document.getElementById("serverList")
 let darkModal = document.getElementById("darkModal")
 let createServerMenu = document.getElementById("createServerMenu")
 let signupMenu = document.getElementById("signupMenu")
+let dark = document.getElementById("dark")
 let crazy = "genius"
 //temporary: DON'T LEAVE THIS IN
 
 localStorage.userId = Math.random()
 
-const firebaseConfig = {
+const firebaseConfig   = {
     apiKey: "AIzaSyDq-4TBRjsYTvfbPq8T3mI0eehX_rxdI2w",
     authDomain: "tetris-cd808.firebaseapp.com",
     databaseURL: "https://tetris-cd808-default-rtdb.firebaseio.com",
@@ -41,38 +42,11 @@ function signInWithGoogle()
   }
 
 firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    /*
-    activeUser = user
-    username = user.displayName
-    pfp = user.photoURL
-    //console.log(pfp)
-profileImage.src = pfp
-    profileName.innerText = username
-    var uid = user.uid;
-    let profIMG = document.querySelectorAll(".currentProfIMG")
-  let profSPAN = document.querySelectorAll(".currentProfSPAN")
-  for(let i=0;i<profIMG.length;i++)
-    {
-      profIMG[i].src = user.photoURL
-    }
-  for(let i=0;i<profSPAN.length;i++)
-    {
-      profSPAN[i].innerText = user.displayName
-    }
-    if(!localStorage.hasConfirmedUsername)
-{
-  localStorage.hasConfirmedUsername = true
-  document.getElementById("dynamicPopup").style.display = "block";
-  
- // document.querySelectorAll(".currentProfIMG").src = user.photoURL
- // document.querySelector(".currentProfSPAN").innerText = user.displayName
-  //localStorage.hasConfirmedUsername = "true"
-  */
+  if (!user) {
+signupMenu.style.display = "block"
+dark.style.display = "block"
 }
- else {
-   console.log("cock")
-  }
+
 });
 
 
