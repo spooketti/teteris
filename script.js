@@ -42,6 +42,7 @@ function signInWithGoogle()
   }
 
 firebase.auth().onAuthStateChanged((user) => {
+  console.log("waste of time")
   if (!user) {
 signupMenu.style.display = "block"
 dark.style.display = "block"
